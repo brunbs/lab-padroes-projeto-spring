@@ -12,6 +12,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * - H2 Database
  * - OpenFeign
  *
+ * To access SwaggerUi: http://localhost:8080/swagger-ui
+ *
  * @author Bruno Barbosa
  */
 @EnableFeignClients
