@@ -53,13 +53,13 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     private void salvarClienteComCep(Cliente cliente) {
-        String cep = cliente.getEndereço().getCep();
+        String cep = cliente.getEndereco().getCep();
         Endereco endereco = enderecoRepository.findById(cep).orElseGet(() -> {
             Endereco novoEndereco = viaCepService.consultarCep(cep);
             enderecoRepository.save(novoEndereco);
             return novoEndereco;
         });
-        cliente.setEndereço(endereco);
+        cliente.setEndereco(endereco);
         clienteRepository.save(cliente);
     }
 }
